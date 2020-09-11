@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   List<User> userList = [];
 
-  Future<List<User>> getUsers() async {
+  Future<List<User>> getUsers({String id}) async {
     url = "https://jsonplaceholder.typicode.com/users";
     response = await http.get(url);
     data = json.decode(response.body);
@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
       userList = data.map((json) => User.fromjson(json)).toList();
       isLoading = false;
     });
-
     return userList;
   }
 

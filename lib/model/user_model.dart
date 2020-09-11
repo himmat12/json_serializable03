@@ -1,11 +1,13 @@
 class User {
+  int id;
   String name;
   String email;
   String userName;
   Address address;
 
   User.fromjson(Map<String, dynamic> json)
-      : name = json['name'],
+      : id = json['id'],
+        name = json['name'],
         email = json['email'],
         userName = json['username'],
         address = Address.fromJson(json['address']);
