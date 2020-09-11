@@ -1,17 +1,13 @@
 class District {
-  int id;
   List bbox = [];
   String title_en;
-  String title_np;
-  int provience;
+  String title_ne;
   Centroid centroid;
 
   District.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        bbox = json['bbox'],
+      : bbox = json['bbox'],
         title_en = json['title_en'],
-        title_np = json['title_ne'],
-        provience = json['province'],
+        title_ne = json['title_ne'],
         centroid = Centroid.fromJson(json['centroid']);
 }
 

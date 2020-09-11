@@ -16,7 +16,7 @@ class _DistrictListPageState extends State<DistrictListPage> {
 
   List<District> districtList = [];
 
-  Future<List<District>> getDistrict() async {
+  Future<List<District>> getUsers({String id}) async {
     url = "https://data.nepalcorona.info/api/v1/districts";
     response = await http.get(url);
     data = json.decode(response.body);
@@ -31,7 +31,7 @@ class _DistrictListPageState extends State<DistrictListPage> {
   @override
   void initState() {
     super.initState();
-    getDistrict();
+    getUsers();
   }
 
   @override
@@ -53,7 +53,7 @@ class _DistrictListPageState extends State<DistrictListPage> {
                     child: ListTile(
                       title: Text(districtList[index].title_en +
                           "( " +
-                          districtList[index].title_np +
+                          districtList[index].title_ne +
                           " )"),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
